@@ -1,9 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter, Geist } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
 
-const inter = Inter({ subsets: ['latin'] });
+const gotham = localFont({
+  src: [
+    { path: '../assets/fonts/gotham-htf-book.otf', weight: '400', style: 'normal' },
+    { path: '../assets/fonts/gotham-medium.ttf', weight: '500', style: 'normal' },
+    { path: '../assets/fonts/gotham-bold.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-gotham',
+});
 
 export const metadata: Metadata = {
   title: 'AERO — Serverless Postgres Platform',
@@ -13,17 +20,14 @@ export const metadata: Metadata = {
 import { Toaster } from 'sonner';
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("dark", "font-sans", geist.variable)}>
-      <body className={`${inter.className} bg-zinc-950 text-zinc-50 min-h-screen antialiased`}>
+    <html lang="en" className={cn("dark", "font-sans", gotham.variable)}>
+      <body className={`${gotham.className} bg-zinc-950 text-zinc-50 min-h-screen antialiased`}>
         <SessionProvider refetchOnWindowFocus={false}>
           {children}
         </SessionProvider>
