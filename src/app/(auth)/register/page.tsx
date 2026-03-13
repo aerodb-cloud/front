@@ -90,8 +90,8 @@ export default function RegisterPage() {
 
                     <div className="w-full max-w-[400px] mx-auto mt-16 sm:mt-0">
                         <div className="mb-8">
-                            <h1 className="text-3xl font-medium text-white tracking-tight">Sign up</h1>
-                            <p className="mt-3 text-[15px] text-zinc-400">Start your 30-day free trial.</p>
+                            <h1 className="text-3xl font-medium text-white tracking-tight">Regístrate</h1>
+                            <p className="mt-3 text-[15px] text-zinc-400">Comienza tu prueba gratuita de 30 días.</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-5">
@@ -102,10 +102,10 @@ export default function RegisterPage() {
                             )}
 
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-medium text-zinc-300">Name</label>
+                                <label className="block text-sm font-medium text-zinc-300">Nombre</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter your name"
+                                    placeholder="Ingresa tu nombre"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
@@ -114,10 +114,10 @@ export default function RegisterPage() {
                             </div>
 
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-medium text-zinc-300">Email</label>
+                                <label className="block text-sm font-medium text-zinc-300">Correo electrónico</label>
                                 <input
                                     type="email"
-                                    placeholder="Enter your email"
+                                    placeholder="Ingresa tu correo"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
@@ -126,16 +126,16 @@ export default function RegisterPage() {
                             </div>
 
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-medium text-zinc-300">Password</label>
+                                <label className="block text-sm font-medium text-zinc-300">Contraseña</label>
                                 <input
                                     type="password"
-                                    placeholder="Create a password"
+                                    placeholder="Crea una contraseña"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
                                     required minLength={8}
                                 />
-                                <p className="text-xs text-zinc-500 mt-1.5 pt-1">Must be at least 8 characters.</p>
+                                <p className="text-xs text-zinc-500 mt-1.5 pt-1">Debe tener al menos 8 caracteres.</p>
                             </div>
 
                             <div className="pt-2 flex flex-col gap-3">
@@ -144,7 +144,7 @@ export default function RegisterPage() {
                                     disabled={loading}
                                     className="w-full py-2 text-[14px] font-semibold text-black bg-white rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center shadow-md shadow-white/5 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    {loading ? 'Creating account...' : 'Get started'}
+                                    {loading ? 'Creando cuenta...' : 'Comenzar'}
                                 </button>
 
                                 <button
@@ -175,9 +175,9 @@ export default function RegisterPage() {
                         </form>
 
                         <p className="mt-8 text-[15px] text-center text-zinc-400">
-                            Already have an account?{' '}
+                            ¿Ya tienes una cuenta?{' '}
                             <Link href="/login" className="font-semibold text-white hover:text-zinc-300 transition-colors">
-                                Log in
+                                Iniciar sesión
                             </Link>
                         </p>
                     </div>
@@ -199,15 +199,15 @@ export default function RegisterPage() {
                             
                             {/* Quote */}
                             <h2 className="text-2xl font-medium text-white mb-8 tracking-tight leading-snug">
-                                "We've been using AeroDB to kickstart every new project and can't imagine working without it. It's incredible."
+                                "Hemos estado usando AeroDB para impulsar cada nuevo proyecto y no podemos imaginar trabajar sin él. Es increíble."
                             </h2>
 
                             {/* Author Info */}
                             <div className="flex items-center justify-between">
                                 <div>
                                     <h3 className="text-lg font-bold text-white">Caitlyn King</h3>
-                                    <p className="text-sm text-zinc-300">Lead Designer, Layers</p>
-                                    <p className="text-xs text-zinc-400 mt-1">Web Development Agency</p>
+                                    <p className="text-sm text-zinc-300">Diseñadora principal, Layers</p>
+                                    <p className="text-xs text-zinc-400 mt-1">Agencia de Desarrollo Web</p>
                                 </div>
                                 
                                 {/* Navigation Circled Buttons mockups */}
