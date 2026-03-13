@@ -185,11 +185,15 @@ export default function RegisterPage() {
 
                 {/* Right Column: Glassmorphism Testimonial Container (Hidden on mobile) */}
                 <div className="hidden lg:flex flex-col justify-end w-full h-full p-8 xl:p-12 pb-24 items-end">
-                    {/* Glassmorphism Testimonial Card */}
-                    <div className="relative z-10 w-full max-w-lg mb-8">
-                        <div className="backdrop-blur-xl bg-white/10 border border-white/20 p-8 rounded-2xl shadow-2xl">
+                    {/* Liquid Glass Testimonial Card */}
+                    <div className="relative z-10 w-full max-w-lg mb-8 group">
+                        <div className="relative backdrop-blur-3xl bg-gradient-to-br from-white/10 to-white/5 p-8 sm:p-10 rounded-[20px] shadow-[0_8px_32px_0_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.2),inset_0_0_20px_0_rgba(255,255,255,0.05)] border border-white/10 transition-all duration-500 overflow-hidden">
+                            
+                            {/* Inner subtle glow reflection */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                             {/* Rating Stars */}
-                            <div className="flex gap-1 mb-6 text-white">
+                            <div className="flex gap-1.5 mb-7 text-white">
                                 <Star className="w-5 h-5 fill-current" />
                                 <Star className="w-5 h-5 fill-current" />
                                 <Star className="w-5 h-5 fill-current" />
@@ -198,32 +202,35 @@ export default function RegisterPage() {
                             </div>
                             
                             {/* Quote */}
-                            <h2 className="text-2xl font-medium text-white mb-8 tracking-tight leading-snug">
+                            <h2 className="relative z-10 text-[20px] sm:text-[22px] font-medium text-white mb-10 tracking-tight leading-snug">
                                 "Hemos estado usando AeroDB para impulsar cada nuevo proyecto y no podemos imaginar trabajar sin él. Es increíble."
                             </h2>
 
                             {/* Author Info */}
-                            <div className="flex items-center justify-between">
+                            <div className="relative z-10 flex items-center justify-between">
                                 <div>
-                                    <h3 className="text-lg font-bold text-white">Caitlyn King</h3>
-                                    <p className="text-sm text-zinc-300">Diseñadora principal, Layers</p>
-                                    <p className="text-xs text-zinc-400 mt-1">Agencia de Desarrollo Web</p>
+                                    <h3 className="text-[16px] font-bold text-white tracking-tight">Caitlyn King</h3>
+                                    <p className="text-[14px] text-zinc-300 font-medium">Diseñadora principal, Layers</p>
+                                    <p className="text-[13px] text-zinc-400 mt-1">Agencia de Desarrollo Web</p>
                                 </div>
                                 
                                 {/* Navigation Circled Buttons mockups */}
                                 <div className="flex gap-4">
-                                    <button type="button" className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
-                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <button type="button" className="w-11 h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all shadow-sm backdrop-blur-md">
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                         </svg>
                                     </button>
-                                    <button type="button" className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
-                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <button type="button" className="w-11 h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all shadow-sm backdrop-blur-md">
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>
                                     </button>
                                 </div>
                             </div>
+                            
+                            {/* Right edge shine line to emphasize thickness */}
+                            <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none" />
                         </div>
                     </div>
                 </div>
