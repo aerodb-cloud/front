@@ -108,7 +108,7 @@ export default function RegisterPage() {
                                     placeholder="Enter your name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full px-4 py-2.5 text-[15px] text-white bg-zinc-950 border border-zinc-800 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-zinc-600 outline-none transition-all shadow-sm"
+                                    className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
                                     required minLength={2}
                                 />
                             </div>
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                                     placeholder="Enter your email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-2.5 text-[15px] text-white bg-zinc-950 border border-zinc-800 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-zinc-600 outline-none transition-all shadow-sm"
+                                    className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
                                     required
                                 />
                             </div>
@@ -132,7 +132,7 @@ export default function RegisterPage() {
                                     placeholder="Create a password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full px-4 py-2.5 text-[15px] text-white bg-zinc-950 border border-zinc-800 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-zinc-600 outline-none transition-all shadow-sm"
+                                    className="w-full bg-[#161618] border border-zinc-600/80 rounded-[5px] px-3 py-[9px] text-[14px] text-white focus:outline-none focus:border-white focus:ring-[3px] focus:ring-zinc-800/80 transition-all font-mono"
                                     required minLength={8}
                                 />
                                 <p className="text-xs text-zinc-500 mt-1.5 pt-1">Must be at least 8 characters.</p>
