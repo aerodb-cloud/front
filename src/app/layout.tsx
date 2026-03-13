@@ -5,6 +5,7 @@ import { SessionProvider } from 'next-auth/react';
 
 const gotham = localFont({
   src: [
+    { path: '../assets/fonts/gotham-light.ttf', weight: '300', style: 'normal' },
     { path: '../assets/fonts/gotham-htf-book.otf', weight: '400', style: 'normal' },
     { path: '../assets/fonts/gotham-medium.ttf', weight: '500', style: 'normal' },
     { path: '../assets/fonts/gotham-bold.ttf', weight: '700', style: 'normal' },
