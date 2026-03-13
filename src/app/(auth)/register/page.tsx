@@ -52,9 +52,10 @@ export default function RegisterPage() {
     };
 
     return (
-        <div className="min-h-screen w-full grid grid-cols-1 lg:grid-cols-2 bg-black selection:bg-indigo-500/30">
+        <div className="min-h-screen w-full bg-black selection:bg-indigo-500/30 flex justify-center">
+            <div className="w-full max-w-[1280px] grid grid-cols-1 lg:grid-cols-2 relative h-screen">
             {/* Left Column: Form */}
-            <div className="flex flex-col relative py-12 px-6 sm:px-12 lg:px-24 justify-center">
+            <div className="flex flex-col relative py-12 px-6 sm:px-12 lg:px-24 justify-center h-full overflow-y-auto">
                 {/* Logo top-left corner */}
                 <div className="absolute top-12 left-6 sm:left-12 lg:left-24">
                     <Link href="/" className="flex items-center gap-2">
@@ -158,13 +159,18 @@ export default function RegisterPage() {
                 </div>
             </div>
 
-            {/* Right Column: Image Showcase (Hidden on Mobile) */}
+            {/* Right Column: Video Showcase (Hidden on Mobile) */}
             <div className="hidden lg:flex relative flex-col justify-end w-full h-full bg-zinc-900 border-l border-zinc-800 p-8 xl:p-12 overflow-hidden">
-                {/* Background Image Placeholder (Can be swapped with a real user provided image URL later) */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center grayscale opacity-80"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop')" }}
-                />
+                {/* Background Video */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen"
+                >
+                    <source src="/videos/glass-animation-5.mp4" type="video/mp4" />
+                </video>
                 
                 {/* Overlay Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -210,6 +216,7 @@ export default function RegisterPage() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );
