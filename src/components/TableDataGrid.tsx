@@ -209,6 +209,15 @@ export function TableDataGrid({ projectId, branchId, dbName, tableName, columns 
                     <table className="w-full text-left border-collapse text-sm">
                         <thead className="sticky top-0 z-10 bg-[#111] shadow-sm">
                             <tr>
+                                <th className="border-b border-zinc-800 px-4 py-2 bg-[#111] w-12 text-center">
+                                    <input 
+                                        type="checkbox" 
+                                        checked={isAllSelected && rows.length > 0}
+                                        ref={input => { if (input) input.indeterminate = isSomeSelected; }}
+                                        onChange={toggleAllRows}
+                                        className="rounded bg-zinc-900 border-zinc-700 text-white focus:ring-zinc-600 focus:ring-offset-zinc-900 cursor-pointer"
+                                    />
+                                </th>
                                 <th className="border-b border-zinc-800 px-4 py-2 bg-[#111] w-12 text-center text-zinc-500">#</th>
                                 {columns.map(col => (
                                     <th key={col.name} className="border-b border-r border-zinc-800 px-4 py-2 bg-[#111] font-medium text-zinc-300 min-w-[150px] max-w-[300px] whitespace-nowrap overflow-hidden text-ellipsis">
@@ -254,7 +263,7 @@ export function TableDataGrid({ projectId, branchId, dbName, tableName, columns 
                         <tbody className="bg-[#0a0a0a]">
                             {totalCount === 0 && !loading ? (
                                 <tr>
-                                    <td colSpan={columns.length + 1} className="py-20 text-center">
+                                    <td colSpan={columns.length + 2} className="py-20 text-center">
                                         <div className="flex flex-col items-center justify-center font-mono tracking-tight text-muted-foreground text-zinc-500">
                                             <div>No rows</div>
                                             <div className="text-xs mt-1">limit {limit} offset {offset}</div>
@@ -264,7 +273,15 @@ export function TableDataGrid({ projectId, branchId, dbName, tableName, columns 
                             ) : (
                                 <>
                                     {rows.map((row, i) => (
-                                        <tr key={i} className="hover:bg-zinc-900/50 border-b border-zinc-800/60 transition-colors group">
+                                        <tr key={i} className={`border-b border-zinc-800/60 transition-colors group ${rowSelection[i] ? 'bg-zinc-800/30' : 'hover:bg-zinc-900/50'}`}>
+                                            <td className="px-4 py-2 text-center border-r border-zinc-900/50">
+                                                <input 
+                                                    type="checkbox" 
+                                                    checked={!!rowSelection[i]}
+                                                    onChange={() => toggleRow(i)}
+                                                    className="rounded bg-zinc-900 border-zinc-700 text-white focus:ring-zinc-600 focus:ring-offset-zinc-900 cursor-pointer"
+                                                />
+                                            </td>
                                             <td className="px-4 py-2 text-zinc-600 font-mono text-xs text-center border-r border-zinc-900/50">
                                                 {offset + i + 1}
                                             </td>
@@ -286,6 +303,7 @@ export function TableDataGrid({ projectId, branchId, dbName, tableName, columns 
                                     {/* Fill empty rows if we have less than limit to maintain grid look */}
                                     {rows.length > 0 && Array.from({ length: Math.max(0, 15 - rows.length) }).map((_, i) => (
                                         <tr key={`empty-${i}`} className="border-b border-zinc-800/30">
+                                            <td className="px-4 py-3 border-r border-zinc-900/50"></td>
                                             <td className="px-4 py-3 border-r border-zinc-900/50"></td>
                                             {columns.map(col => (
                                                 <td key={`empty-${i}-${col.name}`} className="px-4 py-3 border-r border-zinc-900/50"></td>
@@ -333,7 +351,7 @@ export function TableDataGrid({ projectId, branchId, dbName, tableName, columns 
                     <AlertDialogFooter className="mt-4">
                         <AlertDialogCancel className="bg-transparent border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white">Cancelar</AlertDialogCancel>
                         <AlertDialogAction 
-                            onClick={(e) => { e.preventDefault(); handleDeleteSelected(); }}
+                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => { e.preventDefault(); handleDeleteSelected(); }}
                             disabled={isDeleting}
                             className="bg-red-600 hover:bg-red-700 text-white border-transparent flex items-center gap-2"
                         >
