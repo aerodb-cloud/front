@@ -46,14 +46,14 @@ export function LogoShowcase() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
-                  className="relative w-full h-[40px] flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                  className="relative w-full h-[80px] flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                 >
                   {/* Next.js unoptimized to allow external links easily for now */}
                   <img
                     src={logo.url}
                     alt={`${logo.name} logo`}
                     loading="lazy"
-                    className="max-h-full max-w-full object-contain"
+                    className={`max-h-full max-w-[70%] object-contain ${logo.name !== "ASICS" ? "scale-[2.2]" : "scale-[1.3]"}`}
                   />
                 </motion.div>
                 
