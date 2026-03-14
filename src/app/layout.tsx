@@ -1,16 +1,12 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
 
-const gotham = localFont({
-  src: [
-    { path: '../assets/fonts/gotham-light.ttf', weight: '300', style: 'normal' },
-    { path: '../assets/fonts/gotham-htf-book.otf', weight: '400', style: 'normal' },
-    { path: '../assets/fonts/gotham-medium.ttf', weight: '500', style: 'normal' },
-    { path: '../assets/fonts/gotham-bold.ttf', weight: '700', style: 'normal' },
-  ],
-  variable: '--font-gotham',
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -27,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("dark", "font-sans", gotham.variable)}>
-      <body className={`${gotham.className} bg-zinc-950 text-zinc-50 min-h-screen antialiased`}>
+    <html lang="en" className={cn("dark", "font-sans", inter.variable)}>
+      <body className={`${inter.className} bg-zinc-950 text-zinc-50 min-h-screen antialiased`}>
         <SessionProvider refetchOnWindowFocus={false}>
           {children}
         </SessionProvider>
